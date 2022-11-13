@@ -1,0 +1,18 @@
+.capslock-off {
+  position: absolute;
+  background: red;
+  color: white;
+  border-radius: 4px;
+  padding: 6px;
+  display: none;
+  top: 50px;
+    right: 100px;
+}
+
+.capslock-on {
+  display: block;
+}
+
+#new_user {
+  position: relative;
+}

@@ -1,0 +1,44 @@
+.box-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  .block-image-search, .block-interest-search, .block-info-search{
+    width: 33%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+}
+
+.product-search{
+  background-color: #fff;
+  width: 1000px;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+
+.block-info-search{
+  .text-info{
+    width: 80%;
+
+    p, h6, span{
+      color: #000;
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.wrapper-keyword{
+  width: 1000px;
+  height: 80px
+}

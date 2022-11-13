@@ -1,0 +1,29 @@
+<div class="container stretch">
+  <div class="form-register item-interest">
+    <div class="side-left interest">
+      <%= "#{@product.interests} Interessados"  %>
+    </div>
+  </div>
+
+  <div class="item-interest">
+    <div class="side-right">
+      <% if @product.owner? %>
+        <%= image_tag('join.svg', size: "130") %>
+        <div class="interest">
+            Aguarde, a lista não esta completa
+        </div>
+      <% elsif @product.already_join? %>
+        <%= link_to image_tag('joined.svg', size: "130"), leave_advertise_product_path(@product) %>
+        <div class="interest">
+            Voce está nessa lista
+        </div>
+      <% else !@product.already_join? %>
+        <%= link_to image_tag('join.svg', size: "130"), join_advertise_product_path(@product) %>
+        <div class="interest">
+            Participar da lista
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>

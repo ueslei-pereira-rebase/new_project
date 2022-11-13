@@ -1,0 +1,32 @@
+.alert-error-minutes, .alert-error-type, .alert-error-reason, .alert-error-geral, .alert-error-search{
+  display: none;
+  .message-error-minutes, .message-error-type, .message-error-reason, .message-error-geral, .message-error-search{
+    display: flex;
+    bottom: 530px;
+    right: 8px;
+    position: fixed;
+    z-index: 1051;
+    .icon-error-minutes, .icon-error-type, .icon-error-reason, .icon-error-geral, .icon-error-search{
+      background: #F9B5B5;
+      display: inline-block;
+      height: 112px;
+      width: 90px;
+      img{
+        padding: 38px 27px;
+      }
+    }
+    .text-error-minutes, .text-error-type, .text-error-reason, .text-error-geral, .text-error-search{
+      background-color: #FFFFFF;
+      display: flex;
+      height: 112px;
+      justify-content: center;
+      padding: 12px 0;
+      width: 320px;      
+      p{
+        box-sizing: border-box;
+        height: 66px;
+        width: 289px;
+      }
+    }
+  }
+}

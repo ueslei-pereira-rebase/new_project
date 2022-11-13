@@ -1,0 +1,39 @@
+<%= render "shared/layout" %>
+<div class='content-middle-body'>
+  <div>
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <%= image_tag('menu.svg', width: "50px", height: '38px') %> </button>
+    <%= render "shared/sidebar_user" %>
+  </div>
+  
+  <div class="wrapper-history">
+    <div class="box-auth-history-advertise">
+      <% @advertise_products.each do |item| %>
+        <div class="box-wrapper-history-advertise opacity-<%="#{item.desactive?}"%>">
+          <div class="col-item-history">
+            <% if item.image? %>
+              <%= link_to image_tag(item.images.first.representation(resize_and_pad: [115, 115])), advertise_product_path(item)  %>
+            <% else %>
+              <%= link_to (image_tag('sem-foto.jpg', width: "115px")), advertise_product_path(item) %>
+            <% end %>
+          </div>
+          <div class="col-item-history description">
+            <div><span>Data do anuncio:  </span><%=  item.created_at.strftime("%d/%m/%y") %></div>
+            <div class="title"><span class="value-item"><%= item.title %></span></div>
+            <div><span class="value-item">Valor:</span><%= number_to_currency(item.price) %></div>
+
+          </div>
+          <div class="col-item-history">
+            <div>
+              <span class="value-item"><%= image_tag("#{item.handshack}.svg", width: "50px") %></span>
+              <h6><%= "#{item.interests}" %></h6>
+            </div>
+          </div>
+          <div class="col-item-history">
+            <%= image_tag('chat.svg') %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+        <%= paginate @products %>
+  </div>
+</div>

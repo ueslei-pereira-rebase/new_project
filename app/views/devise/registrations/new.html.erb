@@ -1,0 +1,95 @@
+<div class='content-middle-body'>
+  <div class='form-register-user'>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id:"form-register-user", 'data-turbo' => "false"}) do |f| %>
+      <p id="title-register-user">Faça já seu cadastro e aproveite</p>
+
+      <div class="field-box">
+        <div class="input-box">
+          <%= f.text_field :name, autofocus: true, autocomplete: "name", required: true, placeholder: true %>
+          <% if resource.errors.messages[:name].present? %>
+            <span class="field-error"><%= resource.errors.messages[:name].first %></span>
+          <% end %>
+        </div>
+
+        <div class="input-box">
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", required: true, placeholder: true %>
+          <% if resource.errors.messages[:last_name].present? %>
+            <span class="field-error"><%= resource.errors.messages[:last_name].first %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="field-box">
+        <div class="input-box">
+          <%= f.text_field :cpf, autofocus: true, autocomplete: "cpf", required: true, placeholder: true %>
+          <% if resource.errors.messages[:cpf].present? %>
+            <span class="field-error"><%= resource.errors.messages[:cpf].first %></span>
+          <% end %>
+        </div>
+
+        <div class="input-box">
+          <%= f.select :gender, [["Masculino", 1],["Feminino", 0]], required: true, selected: 'ineligible' %>
+          <% if resource.errors.messages[:gender].present? %>
+            <span class="field-error"><%= resource.errors.messages[:gender].first %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="field-box">
+        <div class="input-box">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, placeholder: true %>
+          <% if resource.errors.messages[:email].present? %>
+            <span class="field-error"><%= resource.errors.messages[:email].first %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="field-box">
+        <div class="input-box">
+          <%= f.password_field :password, autocomplete: "new-password", required: true, placeholder: true %>
+          <% if resource.errors.messages[:password].present? %>
+            <span class="field-error"><%= resource.errors.messages[:password].first %></span>
+          <% end %>
+        </div>
+
+        <div class="input-box">
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true, placeholder: true %>
+          <% if resource.errors.messages[:password_confirmation].present? %>
+            <span class="field-error"><%= resource.errors.messages[:password_confirmation].first %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="field-box check-box">
+        <div class="input-box">
+          <div>
+            <%= f.check_box :agree %>
+            <%= f.label :agree do %>
+                Li e concordo com os  
+                <a href="#modal_term_accept" data-bs-toggle="modal" data-bs-target="#modal_term_accept">
+                  Termos de uso e Politia de Privacidade
+                </a>
+            <%end%>
+          </div>
+          <% if resource.errors.messages[:agree].present? %>
+            <span class="field-error"><%= resource.errors.messages[:agree].first %></span>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="field-box">
+        <div class="input-box">
+          <div class="actions">
+            <%= f.submit "Cadastrar" %>
+          </div>
+        </div>
+      </div>
+      <div class="btn-return-sing-in">
+        <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+  <%= render "modal_term_accept" %>

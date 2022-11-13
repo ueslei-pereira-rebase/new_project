@@ -1,0 +1,39 @@
+
+<div class="offcanvas offcanvas-start width-canvas-left-side" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"> Olá <%= current_user.name %> </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+	<div class="navbar-side">
+		<%= link_to "Home", account_root_path, class: "btn-sidebar-#{current_page?(account_root_path)}" %>
+		
+			<a class="btn btn-sidebar-false" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+				Filtrar
+			</a>
+		<div class="collapse" id="collapseExample">
+			<div class="card card-body">
+				<%= link_to 'Mais recentes', account_root_path(order: :desc), class: "btn-sidebar-false" %>
+				<%= link_to 'Mais antigos', account_root_path(order: :asc), class: "btn-sidebar-false" %>
+				<%= link_to 'Mais procurados', account_root_path(:desc), class: "btn-sidebar-false" %>
+				<%= link_to 'Menos procurados', account_root_path(:desc), class: "btn-sidebar-false" %>
+			</div>
+		</div>
+
+		<%= link_to "Cadastrar anuncio", new_account_product_path, class: "btn-sidebar-#{current_page?(new_account_product_path)}", id: "create-adv-#{current_user.active?}" %>
+		<%= link_to "Meus anuncios", account_products_path, class: "btn-sidebar-#{current_page?(account_products_path)}",  id: "my-adv-#{current_user.active?}"%>
+		<%= link_to "Minhas Listas", wish_list_account_product_path(current_user), class: "btn-sidebar-#{current_page?(wish_list_account_product_path(current_user))}", id: "my-list-#{current_user.active?}" %>
+
+		<% if current_user.active? %>
+			<%= link_to image_tag('profile.svg'),  account_user_path(current_user), class: "btn-sidebar-#{current_page?(account_user_path(current_user))} profile-icon" %> 
+		<% else %>
+			<%= link_to image_tag('profile.svg'), edit_account_user_path(current_user), class: 'btn-sidebar-false profile-icon' %>
+		<% end %>
+		<% if user_signed_in?  %>
+			<%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn-sidebar-false" %>
+		<% end %>
+	</div>
+</div>
+
+
+<%= render 'shared/alert' %>
+

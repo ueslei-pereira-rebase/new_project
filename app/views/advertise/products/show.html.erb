@@ -1,0 +1,46 @@
+<%= render "shared/layout" %>
+<div class='content-middle-body'>
+  <div>
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <%= image_tag('menu.svg', width: "50px", height: '38px') %> </button>
+    <%= render "shared/sidebar_user" %>
+  </div>
+
+  <div class="wrapper">
+    <div class="box-auth ">
+      <div class="box-wrapper advertise-box">
+        <div><%= link_to "Voltar á lista", :back %></div>
+
+        <div class="content-top">
+          <div class="container stretch">
+            <div class="form-register item advertise-image-text">
+
+              <div class="side-left">
+                <% if @product.image? %>
+                  <%= render 'product_images', locals: {product: @product} %>
+                <% else %>
+                  <%= (image_tag('sem-foto.jpg', width: "115px")) %>
+                <% end %>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="side-right">
+                <%= render 'description_product', locals: {product: @product} %>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div >
+              <%= render 'join', locals: {product: @product} %>
+            </div>
+          <div>
+
+        <div class="content-bottom">
+          <div class="wrapper-bottom">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

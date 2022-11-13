@@ -1,0 +1,67 @@
+.form-register{
+  
+  .input-box {
+    margin-top: 47px;
+  }
+
+
+}
+
+.content-middle-body {
+  height: 100vw;
+  display: flex;
+}
+
+#form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p{
+    font-size: 18px;
+    font-weight: 400;
+    color: black;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 390px;
+  }
+  input:focus {
+    outline: none;
+  }
+
+  input[type=submit] {
+    border-radius: 8px;
+    color: white;
+    width: 360px;
+    height: 57px;
+    background: #3483FA;
+  }
+
+  .btn-user-update {
+    border-radius: 8px;
+    color: white;
+    width: 360px;
+    height: 57px;
+    background: #3483FA;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  .btn-user-delete {
+    border-radius: 8px;
+    color: white;
+    width: 360px;
+    height: 57px;
+    background: #ffc107;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+}

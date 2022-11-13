@@ -1,0 +1,45 @@
+<%= render "shared/layout" %>
+<div class='content-middle-body'>
+  <div>
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <%= image_tag('menu.svg', width: "50px", height: '38px') %> </button>
+    <%= render "shared/sidebar_user" %>
+  </div>
+
+  <div class="wrapper-history">
+    <div class="box-auth-home-advertise">
+      <% @products.each_slice(4) do |itens| %>
+        <div class="box-wrapper-home-advertise">
+          <% itens.each do |item| %>
+            <%= link_to advertise_product_path(item), class: "card-advertise-#{current_user.active?}" do %>
+              <div class="item-advertise" >
+                <div class="image-advertise">
+                  <% if item.images.attached? %>
+                      <%= image_tag(item.images.first.representation(resize_and_pad: [200, 200])) %>
+                    <% else %>
+                      <%=  image_tag('sem-foto.jpg', width: "115px") %>
+                    <% end %>
+                </div>
+                <div class="card-bottom">
+                  <div class="title-advertise">
+                    <%= item.title %>
+                  </div>
+                  <div class="info-advertise">
+                    <div class="price-advertise"><%= number_to_currency(item.price) %></div>
+                    <div class="join-advertise">
+                      <%= image_tag('join.svg', size: "40") %>
+                      <%= "#{item.interested_amount}/#{item.amount}"  %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= paginate @products %>
+  </div>
+</div>
+
+
+<%= render 'shared/alert'%>

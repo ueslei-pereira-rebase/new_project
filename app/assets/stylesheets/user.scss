@@ -1,0 +1,84 @@
+.form-register-user{
+  border-radius: 8px;
+  width: 1000px;
+  height: 644px;
+  background: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .field-box {
+    width: 900px;
+    display: flex;
+    .input-box {
+      margin-top: 47px;
+
+      .field-error{
+        position: absolute;
+        color: red;
+      }
+
+      #user_agree {
+        width: auto;
+        margin-right: 19px;
+      }
+    }
+  }
+
+}
+
+#form-register-user {
+  margin: 67px 0 120px 0;
+    p{
+    font-size: 36px;
+    font-weight: 400;
+    color: black;
+  }
+
+  input {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 390px;
+    margin-right: 61px;
+  }
+  input:focus {
+    outline: none;
+  }
+
+  input[type=submit] {
+    border-radius: 8px;
+    color: white;
+    width: 360px;
+    height: 57px;
+    background: #3483FA;
+  }
+
+  .btn-return-sing-in {
+    width: 900px;
+  }
+
+}
+
+.btn-update-profile {
+  display: flex;
+  width: 85px;
+  height: 50px;
+  background: border-box;
+  border-radius: 30px;
+  justify-content: center;
+}
+.btn-update-profile:hover{
+  background-color: rgb(175, 184, 184);
+  transition: 0.5s;
+}
+
+.image-upload > input
+{
+   display: none;
+}
+.image-upload > label{
+  cursor:pointer;
+}

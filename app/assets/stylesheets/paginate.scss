@@ -1,0 +1,17 @@
+.pagination {
+  display: table;
+  margin: 10px auto;
+  height: min-content;
+}
+
+.pagination a,
+.pagination span.current,
+.pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  margin: 0 1px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid rgba(#b2b7bb, .33);
+}

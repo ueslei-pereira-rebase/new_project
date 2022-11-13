@@ -1,0 +1,209 @@
+.form-register{
+  .list{
+    display: flex;
+  }
+  #title-register-advertise{
+    font-family: Roboto;
+    font-size: 36px;
+  }
+
+  .title, .body{
+    text-align: initial;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .advertise-details{
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+  }
+
+  #product_amount, #product_price {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100px;
+    margin-left: 20px;
+  }
+
+  #product_body{
+    height: 170px;
+  }
+
+  #product_title, #product_body{
+    border: 1px solid black;
+  }
+  input[type="number"]::placeholder{
+    text-align: center;
+  }
+}
+
+.box-auth-history-advertise {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 90%;
+  .box-wrapper-history-advertise{
+    background: #FFF;
+    width: 1000px;
+    height: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 1px 2px;
+    
+    .stretch {
+      align-items: stretch;
+    }
+
+    .container {
+      margin: 0 auto;
+      display: flex;
+    }
+
+    .item {
+      flex: 1;
+      margin: 5px;
+      padding: 0 10px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .col-item-history{
+      height: 100%;
+      width: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      color: #796E6E;
+      .title{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 250px;
+        padding: 0 10px;
+        text-align: center;
+        .value-item{
+          margin-right: 10px;
+          font-weight: bold;
+        }
+      }
+      h6{
+        font-size: 16px;
+        padding: 10px 0 0 0;
+        text-align: center;
+      }
+      a:hover{
+        filter: drop-shadow(2px 4px 6px black);
+      }
+    }
+  }
+}
+
+.direct-upload {
+  display: inline-block;
+  position: relative;
+  padding: 2px 4px;
+  margin: 0 3px 3px 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.direct-upload--pending {
+  opacity: 0.6;
+}
+
+.direct-upload__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background: #0076ff;
+  transition: width 120ms ease-out, opacity 60ms 60ms ease-in;
+  transform: translate3d(0, 0, 0);
+}
+
+.direct-upload--complete .direct-upload__progress {
+  opacity: 0.4;
+}
+
+.direct-upload--error {
+  border-color: red;
+}
+
+input[type=file][data-direct-upload-url][disabled] {
+  display: none;
+}
+
+.wrapper-history{
+  display: grid;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.btn-status{
+  width: 130px;
+  height: 35px;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+
+}
+
+
+.btn-desactive-true, .btn-desactive-false{
+  background: #D73E3E;
+  color: #fff;
+
+  filter: opacity(0.5);
+
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.btn-active-true, .btn-active-false{
+  background: #36F36B;
+  color: #351616;
+  filter: drop-shadow(2px 4px 6px black);
+
+  a{
+    color: #351616;
+    text-decoration: none;
+  }
+}
+
+.btn-active-false{
+  filter: opacity(0.5)
+}
+
+.btn-desactive-false{
+  filter: opacity(0.5)
+}
+
+.btn-active-true{
+  filter: drop-shadow(2px 4px 6px black)
+}
+
+.btn-desactive-true{
+  filter: drop-shadow(2px 4px 6px black)
+}
+
+.opacity-true{
+  opacity: 0.5;
+}

@@ -1,0 +1,54 @@
+<%= render "shared/layout" %>
+<div class='content-middle-body'>
+  <div>
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <%= image_tag('menu.svg', width: "50px", height: '38px') %> </button>
+    <%= render "shared/sidebar_user" %>
+  </div>
+  
+  <div class="wrapper">
+    <div class="box-auth">
+      <div class="box-wrapper">
+        <%= form_with model: [:account, @user], id: "form-register" , local: true do |form| %>
+          <div class="container stretch">
+            <div class="form-register item">
+              <p id="title-register-user">Complete seu perfil e tenha acesso total a plataforma</p>
+              <%= form.hidden_field :id, value: @user.id %>
+              <div class="input-box">
+                <%= form.text_field :subsidiary, required: true, placeholder: true %>
+              </div>
+
+              <div class="input-box">
+                <%= form.text_field :department, max: 14, required: true ,placeholder: true%>
+              </div>
+
+              <div class="input-box">
+                <%= form.telephone_field :phone, required: true, placeholder: true %>
+              </div>
+
+
+              <div class="input-box">
+                <%= form.telephone_field :mobile, required: true,  placeholder: true %>
+              </div>
+
+              <div class="input-box">
+                <%= form.submit "Salvar informações" %>
+              </div>
+            </div>
+
+            <div class="item">
+              <% if @user.avatar.attached? %>
+                <%= image_tag @user.avatar.variant( resize_to_fit: [200, nil]) %>
+              <% end %>
+              <div class="image-upload">
+                <%= label_tag :file_input do %>
+                  <%=image_tag('download.ico')%> 
+                <% end %>
+                <%= form.file_field :avatar, direct_upload: true, id: 'file_input' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

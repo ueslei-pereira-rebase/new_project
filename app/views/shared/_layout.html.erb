@@ -1,0 +1,13 @@
+<div class="navbar-top">
+  <div class="search-bar">
+    <div class="input-group mb-3">
+      <%= form_with url: account_search_path, class: 'search-form', method: :get, local: true do %>
+        <%= text_field_tag :query,nil,  class: 'form-control', placeholder: 'Pesquisar' %>
+        <div class="input-group-append">
+          <%= image_submit_tag('search.svg', id: 'submit-search') %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

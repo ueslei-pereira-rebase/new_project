@@ -1,0 +1,16 @@
+.filter-content{
+  width: 150px;
+  height: 100%;
+  border: 1px solid black;
+  position: relative;
+}
+.roll-bar{
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  display: list-item;
+}
+
+.width-canvas-left-side{
+  width: min-content !important;
+}
