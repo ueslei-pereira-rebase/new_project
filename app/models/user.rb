@@ -1,9 +1,18 @@
 class User < ApplicationRecord
+  has_many :messages
   has_many :agrees
   has_many :participate_list, through: :agrees, source: :product
   has_many :products
   belongs_to :company
+  has_many :participants
+  has_many :rooms, through: :participants
+  after_create_commit { broadcast_append_to "account/users/user" }
+
+
+  
   has_one_attached :avatar
+  scope :all_except, ->(user) { where.not(id: user) }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

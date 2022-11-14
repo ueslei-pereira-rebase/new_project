@@ -1,0 +1,8 @@
+<div>
+  <% @users.each do |user| %>
+    <div><%= link_to user.name,room_path(user) %></div>
+  <% end %>
+ </div>
+
+
+

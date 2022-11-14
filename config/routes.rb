@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'welcome', to: "welcome#index"
-  resources :rooms
 
   devise_for :admins
   devise_for :users
+
+  get 'welcome', to: "welcome#index"
+  resources :rooms do
+    resources :messages
+  end
+
+  resources :private_chats, only: %i[show]
 
   namespace :manager do
     root 'home#index'
