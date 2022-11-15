@@ -23,15 +23,15 @@
 
             <div class="item">
               <div class="box-chat">
-                <div class="room-message ">
-                  <div class="bg-dark text-light">
+                <div class="room-message bg-light", id="box-messages">
+                  <div class="bg-light text-light">
                     <% if @single_room %>
                       <h4 class="text-center"> <h4 class="text-center"> <%= @user&.name || @single_room.name %> </h4> </h4>
                       <%= turbo_stream_from @single_room %>
                       <div id="messages">
                         <%= render @messages %>
                       </div>
-                    <% end %>
+                    <% end %> 
                   </div>
                 </div>
                 <%= render partial: 'layouts/new_message_form' %>

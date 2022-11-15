@@ -1,10 +1,13 @@
 class PrivateChatsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @user = User.find(params[:id])
     @current_user = current_user
-    @rooms = Room.public_rooms
-    @users = User.all_except(@current_user)
+    # @rooms = Room.public_rooms
+    @rooms = Room.private_rooms 
+    @users = Participant.people(@rooms, current_user)
+    # @users = User.all_except(@current_user)
     @room = Room.new
     @message = Message.new
     @room_name = get_name(@user, @current_user)

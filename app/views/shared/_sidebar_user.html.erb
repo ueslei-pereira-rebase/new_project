@@ -14,8 +14,8 @@
 			<div class="card card-body">
 				<%= link_to 'Mais recentes', account_root_path(order: :desc), class: "btn-sidebar-false" %>
 				<%= link_to 'Mais antigos', account_root_path(order: :asc), class: "btn-sidebar-false" %>
-				<%= link_to 'Mais procurados', account_root_path(:desc), class: "btn-sidebar-false" %>
-				<%= link_to 'Menos procurados', account_root_path(:desc), class: "btn-sidebar-false" %>
+				<%= link_to 'Maior preço', account_root_path(price: :desc), class: "btn-sidebar-false" %>
+				<%= link_to 'Menor preço', account_root_path(price: :asc), class: "btn-sidebar-false" %>
 			</div>
 		</div>
 

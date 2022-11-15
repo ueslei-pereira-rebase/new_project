@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  extend Devise::Models
   has_many :messages
   has_many :agrees
   has_many :participate_list, through: :agrees, source: :product
@@ -6,7 +7,10 @@ class User < ApplicationRecord
   belongs_to :company
   has_many :participants
   has_many :rooms, through: :participants
-  after_create_commit { broadcast_append_to "account/users/user" }
+  # after_update_commit { broadcast_append_to "account/users/user" } 
+  after_create_commit do
+     broadcast_append_to "account/users/user"  if self.active?
+  end
 
 
   

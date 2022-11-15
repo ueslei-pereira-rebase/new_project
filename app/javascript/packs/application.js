@@ -11,3 +11,6 @@ require('../stylesheets/application')
 require('packs/forms')
 Rails.start()
 ActiveStorage.start()
+
+
+

@@ -3,9 +3,8 @@ module Account
     
     def index
       company_id = current_user.company_id
-
       @products = Company.products_active(company_id)
-      .order(created_at: params[:order] || :desc)
+      .order(filter(params))
       .page(params[:page])
       .per(12)
     end
@@ -24,6 +23,19 @@ module Account
       end
 
       @keyword = query
+    end
+
+    private
+
+    def filter(params)
+      case params.keys.first
+      when "order"
+        return {created_at: params[:order]}
+      when "price"
+        return {price: params[:price]}
+      else
+        return {created_at: "desc"}
+      end
     end
   end
 end

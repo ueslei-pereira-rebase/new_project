@@ -11,8 +11,6 @@ $(function() {
   //   App.cable = ActionCable.createConsumer();
   
   // }).call(this);
-  
-
   if ($('.alert, .alert-danger, .alert-info').length) {
     $('.alert-danger, .alert-info').fadeIn( 3000 ).delay(1000).fadeOut(3000)
   }
@@ -39,7 +37,13 @@ $(function() {
     return false
   })
 
+  
   $("#my-list-false").click(function(){
+    searchIsBlank();
+    return false
+  })
+
+  $(".card-advertise-false").click(function(){
     searchIsBlank();
     return false
   })
