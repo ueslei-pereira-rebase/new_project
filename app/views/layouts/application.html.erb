@@ -13,7 +13,7 @@
 
     <style>
       <%= ".msg-#{current_user&.id}" %> {
-z
+
       }
       <%= ".cont-#{current_user&.id}" %> {
       display: flex;
@@ -28,5 +28,6 @@ z
     </div>
     <%= render 'layouts/alert'%>
     <%= yield %>
+    <%= javascript_pack_tag 'forms' %>
   </body>
 </html>

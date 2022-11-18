@@ -13,7 +13,7 @@
             Aguarde, a lista não esta completa
         </div>
       <% elsif @product.already_join? %>
-        <%= link_to image_tag('joined.svg', size: "130"), leave_advertise_product_path(@product) %>
+        <%= link_to image_tag('joined.svg', size: "130"), leave_advertise_product_path(@product)%>
         <div class="interest">
             Voce está nessa lista
         </div>

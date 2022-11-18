@@ -55,21 +55,18 @@ $(function() {
 
 
   $("#step-1-2").click(function(){
-    if ($('#title').val() === "") return false
-    $(".step-one").delay(600).fadeOut();
-    $(".step-two").delay(1100).fadeIn();
+    $(".step-one").css("display","none");
+    $(".step-two").css("display","block");
     return false
   })
 
   $("#step-2-3").click(function(){
-    if ($('#description').val() === "") return false
     $(".step-two").delay(600).fadeOut();
     $(".step-three").delay(1100).fadeIn();
     return false
   })
 
   $("#step-4").click(function(){
-    if ($('#list').val() === "" || $('#price').val() === "") return false
     $(".step-three").delay(600).fadeOut();
     $(".step-four").delay(1100).fadeIn();
     return false

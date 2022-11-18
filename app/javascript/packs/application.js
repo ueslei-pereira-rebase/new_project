@@ -5,12 +5,10 @@
 
 import "@hotwired/turbo-rails"
 import Rails from "@rails/ujs"
+require("turbolinks").start()
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 require('../stylesheets/application')
 require('packs/forms')
 Rails.start()
 ActiveStorage.start()
-
-
-

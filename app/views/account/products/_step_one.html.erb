@@ -1,0 +1,16 @@
+<div class="step-one">
+  <div class="text-step-one">
+    <div class="text-progress">Etapa 1 de 4</div>
+    <div><h2>Vamos começar com o titulo do seu anuncio</h2></div>
+    <div><p>Seja objetivo com seu titulo, ele que sera seu cartao de visita para outros usuarios </p></div>
+  </div>
+
+  <div class="input-box title" >
+    <%= form.text_field :title, required: true, placeholder: 'Titulo do anuncio', id: "title"%>
+  </div>
+  <div class="btn-step">
+    <div class="btn-back"></div>
+    <div class="btn-between-space"></div>
+    <div class="btn-forward"><a href="#" id="step-1-2"><%= image_tag("arrow_foward.svg", width: 100) %></a></div>
+  </div>
+</div>

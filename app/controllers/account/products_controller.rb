@@ -1,12 +1,16 @@
+require 'csv'
 module Account
   class ProductsController < ApplicationController
     before_action :authenticate_user!
 
     def index
-      @advertise_products = Product.where(user_id: current_user)
+      @list_product = Product.where(user_id: current_user)
         .order(created_at: :desc)
         .page(params[:page])
-        .per(4)
+        .per(5)
+      @advertise_products = @list_product.map do |product|
+        ProductPresenter.new(product, current_user)
+      end
     end
 
     def new
@@ -53,6 +57,11 @@ module Account
 
     def params_permitted
       params.require(:product).permit(:amount, :price, :title, :body, images: [])
+      # params[:product][:images] = params[:product][:image1], params[:product][:image2]
+      # params[:product].delete(:image1)
+      # params[:product].delete(:image2)
+      # params[:product].delete(:authenticity_token)
+      # params
     end
   end
 end

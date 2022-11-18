@@ -1,0 +1,23 @@
+<div class="step-three">
+
+    <div class="text-step-three">
+      <div class="text-progress">Etapa 3 de 4</div>
+      <div><h2>Estamos quase lá.</h2></div>
+      <div><p> Esse é o momento que voce deve definir o preço e a quantidade de pessoas necessarias para fechar essa compra</p></div>
+      <div><p> Lembre-se que seu anuncio ficara ativo ate que a lista esteja completa.</p></div>
+    </div>
+
+  <div class="input-box list">
+    <%= form.number_field :amount, min: 2, step: 1, required: true, placeholder: 'Qtde', id: 'list' %>
+  </div>
+
+  <div class="input-box price">
+    <%= form.number_field :price, min: 1, step: 0.01, required: true, placeholder: 'R$', id: 'price'%>
+  </div>
+    <div class="btn-step-two">
+      <div class="btn-back"><a href="#" id="step-3-2"><%= image_tag("arrow_back.svg", width: 100) %></a></div>
+      <div class="btn-between-space"></div>
+      <div class="btn-forward"><a href="#" id="step-4"><%= image_tag("arrow_foward.svg", width: 100) %></a></div>
+    </div>
+
+</div>

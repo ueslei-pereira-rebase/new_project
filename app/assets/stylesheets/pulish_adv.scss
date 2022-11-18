@@ -1,0 +1,179 @@
+.step-one{
+  width: 781px;
+  height: 500px;
+
+
+  .text-step-one{
+    height: 250px;
+
+    >:first-child{  
+      color: #8d99ae;
+    }
+    p{
+      color:#6c757d !important;
+    }
+  }
+
+  .title{
+    height: 200px;
+  }
+
+  .btn-between-space{
+    width: 100%;
+    height: 50px;
+  }
+
+  .btn-back, .btn-forward{
+    width: 100px;
+    height: 100px;
+  }
+
+  .btn-step{
+    display: flex;
+  }
+}
+
+.step-two{
+  display: none;
+  height: 500px;
+  width: 781px;
+
+
+  .text-step-two{
+    height: 200px;
+
+    >:first-child{  
+      color: #8d99ae;
+    }
+    p{
+      color:#6c757d !important;
+    }
+  }
+
+  .body{
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    textarea{
+      border-radius: 8px;
+      resize: none;
+      border: 1px solid black;
+      outline: none;
+    }
+  }
+
+  .btn-between-space{
+    width: 100%;
+    height: 50px;
+  }
+
+  .btn-back .btn-forward{
+    width: 10%;
+    height: 50px;
+  }
+
+  .btn-step-two{
+    display: flex;
+  }
+}
+
+.step-three{
+  display: none;
+  height: 500px;
+  width: 781px;
+
+
+  .text-step-three{
+    height: 200px;
+
+    >:first-child{  
+      color: #8d99ae;
+    }
+    p{
+      color:#6c757d !important;
+    }
+  }
+
+  .list{
+    height: 100px;
+    input {
+      width: 100px !important;
+      border-style: groove;
+      border: 1px solid gray !important;
+    }
+  }
+
+  .price{
+    height: 150px;
+    input {
+      width: 100px !important;
+      border-style: groove;
+      border: 1px solid gray !important;
+    }
+  }
+
+  .btn-between-space{
+    width: 100%;
+    height: 50px;
+  }
+
+  .btn-back .btn-forward{
+    width: 10%;
+    height: 50px;
+  }
+
+  .btn-step-two{
+    display: flex;
+  }
+}
+
+.step-four{
+  display: none;
+  height: 500px;
+  width: 781px;
+
+
+  .text-step-four{
+    height: 200px;
+
+    >:first-child{  
+      color: #8d99ae;
+    }
+    p{
+      color:#6c757d !important;
+    }
+  }
+
+  .list{
+    height: 100px;
+
+  }
+
+  .price{
+    height: 150px;
+
+  }
+
+  .btn-between-space{
+    width: 100%;
+    height: 50px;
+  }
+
+  .btn-back .btn-forward{
+    width: 10%;
+    height: 50px;
+  }
+
+  .btn-forward{
+    input[type=submit] {
+      border-radius: 8px;
+      width: 100px !important;
+      height: 100px;
+      background: white;
+    }
+  }
+
+  .btn-step-two{
+    display: flex;
+  }
+}

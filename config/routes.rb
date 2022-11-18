@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :documents, only: %i[show]
+
   namespace :advertise do
     resources :products  do
       member do

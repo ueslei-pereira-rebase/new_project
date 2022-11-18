@@ -1,0 +1,20 @@
+<div class="step-two">
+
+    <div class="text-step-two">
+      <div class="text-progress">Etapa 2 de 4</div>
+      <div><h2>Agora vamos criar uma Descrição para o seu anuncio.</h2></div>
+      <div><p> Detalhe o que esta anunciando, seu publico quer saber exatamente o que voce esta oferecendo. </p></div>
+    </div>
+
+    <div class="input-box body">
+      <%# <div class="body">Descrição do anuncio</div> %>
+      <%= form.text_area :body, required: true, rows: 8, cols: 60, placeholder: "Descrição do produto", id: 'description' %>
+    </div>
+    <div class="btn-step-two">
+      <div class="btn-back"><a href="#" id="step-1"><%= image_tag("arrow_back.svg", width: 100) %></a></div>
+      <div class="btn-between-space"></div>
+      <div class="btn-forward"><a href="#" id="step-2-3"><%= image_tag("arrow_foward.svg", width: 100) %></a></div>
+    </div>
+
+</div>
+

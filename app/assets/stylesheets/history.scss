@@ -44,7 +44,7 @@
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  height: 90%;
+  height: 110%;
   .box-wrapper-history-advertise{
     background: #FFF;
     width: 1000px;
@@ -82,6 +82,9 @@
       justify-content: space-evenly;
       flex-direction: column;
       color: #796E6E;
+      .progress{
+        width: 90%;
+      }
       .title{
         text-overflow: ellipsis;
         overflow: hidden;
@@ -145,11 +148,12 @@ input[type=file][data-direct-upload-url][disabled] {
 }
 
 .wrapper-history{
-  display: grid;
+  display: flex;
   flex: 1;
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  align-items: center;
 }
 
 .btn-status{
@@ -161,9 +165,7 @@ input[type=file][data-direct-upload-url][disabled] {
   justify-content: center;
   align-items: center;
   border-radius: 25px;
-
 }
-
 
 .btn-desactive-true, .btn-desactive-false{
   background: #D73E3E;

@@ -17,7 +17,10 @@ services:
       - redis
   redis:
     image: redis:6.2-alpine
+    command: redis-server
     restart: always
+    volumes:
+      - 'redis:/data'
 
   db:
     image: postgres:12-alpine
@@ -26,5 +29,15 @@ services:
       - POSTGRES_PASSWORD=postgres
     volumes:
       - project:/var/lib/postgresql/data
+
+  cable:
+    depends_on:
+      - 'redis'
+    build: .
+    command: puma -p 28080 cable/config.ru
+    ports:
+      - '28080:28080'
+
 volumes:
   project:
+  redis:
