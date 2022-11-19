@@ -6,7 +6,8 @@
   </div>
 
   <div class="input-box title" >
-    <%= form.text_field :title, required: true, placeholder: 'Titulo do anuncio', id: "title"%>
+    <%= form.text_field :title, required: true, placeholder: 'Titulo do anuncio', id: "title" %>
+    <div class="tip-title" style="display:none">Campo obrigatório</div>
   </div>
   <div class="btn-step">
     <div class="btn-back"></div>
@@ -14,3 +15,4 @@
     <div class="btn-forward"><a href="#" id="step-1-2"><%= image_tag("arrow_foward.svg", width: 100) %></a></div>
   </div>
 </div>
+

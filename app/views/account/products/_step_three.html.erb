@@ -9,11 +9,17 @@
 
   <div class="input-box list">
     <%= form.number_field :amount, min: 2, step: 1, required: true, placeholder: 'Qtde', id: 'list' %>
+       <div class="tip-list">Campo obrigatório</div>
   </div>
+
+
 
   <div class="input-box price">
     <%= form.number_field :price, min: 1, step: 0.01, required: true, placeholder: 'R$', id: 'price'%>
+       <div class="tip-price">Campo obrigatório</div>
+
   </div>
+
     <div class="btn-step-two">
       <div class="btn-back"><a href="#" id="step-3-2"><%= image_tag("arrow_back.svg", width: 100) %></a></div>
       <div class="btn-between-space"></div>

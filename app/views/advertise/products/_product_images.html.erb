@@ -11,7 +11,7 @@
   <div class="carousel-inner">
     <%  @product.images.each_with_index do |image, index| %>
       <div class="carousel-item <%= index==0 ? 'active' : '' %>", data-bs-interval="10000" >
-        <%= image_tag(image.representation(resize_and_pad: [410, 410]), class: 'd-block w-100') %>
+        <%= image_tag(image.representation(resize_and_pad: [360, 360])) %>
       </div>
     <% end %>
   </div>

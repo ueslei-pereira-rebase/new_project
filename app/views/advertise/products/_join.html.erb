@@ -1,12 +1,11 @@
-<div class="container stretch">
-  <div class="form-register item-interest">
+  <div class="item-interest">
     <div class="side-left interest">
       <%= "#{@product.interests} Interessados"  %>
     </div>
   </div>
 
   <div class="item-interest">
-    <div class="side-right">
+    <div>
       <% if @product.owner? %>
         <%= image_tag('join.svg', size: "130") %>
         <div class="interest">
@@ -25,5 +24,3 @@
       <% end %>
     </div>
   </div>
-</div>
-</div>

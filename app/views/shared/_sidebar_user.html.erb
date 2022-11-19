@@ -7,9 +7,9 @@
 	<div class="navbar-side">
 		<%= link_to "Home", account_root_path, class: "btn-sidebar-#{current_page?(account_root_path)}" %>
 		
-			<a class="btn btn-sidebar-false" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-				Ordenar
-			</a>
+		<a class="btn btn-sidebar-false" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+			Ordenar
+		</a>
 		<div class="collapse" id="collapseExample">
 			<div class="card card-body">
 				<%= link_to 'Mais recentes', account_root_path(order: :desc), class: "btn-sidebar-false" %>
@@ -19,9 +19,18 @@
 			</div>
 		</div>
 
+
 		<%= link_to "Cadastrar anuncio", new_account_product_path, class: "btn-sidebar-#{current_page?(new_account_product_path)}", id: "create-adv-#{current_user.active?}" %>
-		<%= link_to "Meus anuncios", account_products_path, class: "btn-sidebar-#{current_page?(account_products_path)}",  id: "my-adv-#{current_user.active?}"%>
-		<%= link_to "Minhas Listas", wish_list_account_product_path(current_user), class: "btn-sidebar-#{current_page?(wish_list_account_product_path(current_user))}", id: "my-list-#{current_user.active?}" %>
+
+		<a class="btn btn-sidebar-false" data-bs-toggle="collapse" href="#collapseHistory" role="button" aria-expanded="false" aria-controls="collapseHistory">
+			Meu historico
+		</a>
+		<div class="collapse" id="collapseHistory">
+			<div class="card card-body">
+				<%= link_to "Anuncios", account_products_path, class: "btn-sidebar-#{current_page?(account_products_path)}",  id: "my-adv-#{current_user.active?}"%>
+				<%= link_to "Participações", wish_list_account_product_path(current_user), class: "btn-sidebar-#{current_page?(wish_list_account_product_path(current_user))}", id: "my-list-#{current_user.active?}" %>
+			</div>
+		</div>
 
 		<% if current_user.active? %>
 			<%= link_to image_tag('profile.svg'),  account_user_path(current_user), class: "btn-sidebar-#{current_page?(account_user_path(current_user))} profile-icon" %> 

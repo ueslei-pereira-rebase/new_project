@@ -51,4 +51,8 @@ class ProductPresenter < SimpleDelegator
     already_join? ? 'joined' : 'join'
   end
 
+  def progress
+    ((product.interested_amount.to_f / product.amount)*100).ceil
+  end
+
 end

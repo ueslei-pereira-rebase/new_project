@@ -1,6 +1,6 @@
 <div class="step-four">
 
-    <div class="text-step-three">
+    <div class="text-step-four">
       <div class="text-progress">Etapa 4 de 4</div>
       <div><h2>Falta so mais um pouquinho</h2></div>
       <div><p> Vamos colocar umas fotos bacanas para seu anuncio?</p></div>
@@ -10,7 +10,7 @@
 
     <%# <%= form.file_field :image1 %>
     <%# <%= form.file_field :image2 %>
-    <%= form.file_field :images, multiple: true%>
+    <%= form.file_field :images, multiple: true, style:'border:none; margin-bottom:200px;' %>
 
     <%# <input multiple="multiple" type="file" name="product[images1]" id="product_images1" /> 
      <input multiple="multiple" type="file" name="product[images2]" id="product_images2" />  %>
@@ -18,7 +18,8 @@
     <div class="btn-step-two">
       <div class="btn-back"><a href="#" id="step-4-3"><%= image_tag("arrow_back.svg", width: 100) %></a></div>
       <div class="btn-between-space"></div>
-      <div class="btn-forward"><%= image_submit_tag("check.svg", width:100)%></div>
+      <div class="btn-forward"><%= image_submit_tag("check.svg", class: 'step-finish', remote: true) %>
+      </div>
     </div>
 
 </div>

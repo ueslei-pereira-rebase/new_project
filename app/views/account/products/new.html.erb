@@ -16,11 +16,17 @@
 
           <%= render partial: 'step_four', locals: {form: form} %>
 
+          <%= render partial: 'loading' %>
+
+          <%= render partial: 'finish' %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 
 <%= javascript_pack_tag 'forms' %>

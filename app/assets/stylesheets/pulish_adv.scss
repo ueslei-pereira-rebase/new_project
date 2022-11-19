@@ -16,6 +16,15 @@
 
   .title{
     height: 200px;
+    input{
+      border-bottom: 1px solid black !important;
+    }
+    .tip-title{
+      color: red;
+      display: none;
+    }
+    
+
   }
 
   .btn-between-space{
@@ -48,6 +57,14 @@
     p{
       color:#6c757d !important;
     }
+
+  }
+
+  .tip-body{
+    display: none;
+    display: flex;
+    justify-content: center;
+    color: red;
   }
 
   .body{
@@ -96,6 +113,7 @@
 
   .list{
     height: 100px;
+    
     input {
       width: 100px !important;
       border-style: groove;
@@ -109,7 +127,13 @@
       width: 100px !important;
       border-style: groove;
       border: 1px solid gray !important;
+      
     }
+  }
+
+  .tip-list, .tip-price{
+    display: none;
+    color: red;
   }
 
   .btn-between-space{
@@ -131,8 +155,11 @@
   display: none;
   height: 500px;
   width: 781px;
-
-
+  .product_images{
+    input{
+      border: none;
+    }
+  }
   .text-step-four{
     height: 200px;
 
@@ -165,9 +192,10 @@
   }
 
   .btn-forward{
-    input[type=submit] {
+    input[type=image] {
       border-radius: 8px;
-      width: 100px !important;
+      width: 70px !important;
+      border: none !important;
       height: 100px;
       background: white;
     }
@@ -176,4 +204,15 @@
   .btn-step-two{
     display: flex;
   }
+}
+
+.finish{
+  text-align: center;
+  display: none;
+}
+
+#loading{
+  display: none;
+  width: 200px;
+  height: 200px;
 }

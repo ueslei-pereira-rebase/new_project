@@ -33,7 +33,7 @@
           <div class="col-item-history">
             <%= link_to image_tag('download.svg', width: 30), document_path(item.id, format: 'csv')%>
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: <%=item.interested_amount%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+              <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: <%=item.progress%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=item.progress%>%</div>
             </div>
           </div>
         </div>
@@ -44,3 +44,4 @@
       </div>
   </div>
 </div>
+

@@ -55,25 +55,71 @@ $(function() {
 
 
   $("#step-1-2").click(function(){
-    if ($('#title').val() === "") return false
+    if ($('#title').val() === ""){
+      alertTipTitle ();
+      return false
+    }
     $(".step-one").delay(600).fadeOut();
     $(".step-two").delay(1100).fadeIn();
     return false
   })
 
+  function alertTipTitle(){
+    $('.tip-title').fadeIn();
+    $('.tip-title').delay(1000).fadeOut(3000);
+  }
+
   $("#step-2-3").click(function(){
-    if ($('#description').val() === "") return false
+    if ($('#description').val() === ""){
+      alertTipDescription();
+      return false
+    }
     $(".step-two").delay(600).fadeOut();
     $(".step-three").delay(1100).fadeIn();
     return false
   })
 
+  function alertTipDescription(){
+    $('.tip-title').fadeIn();
+    $('.tip-title').delay(1000).fadeOut(3000);
+  }
+
   $("#step-4").click(function(){
-    if ($('#list').val() === "" || $('#price').val() === "") return false
+    if (alertTipList() || alertTipPrice()){
+      return false
+    }
+
     $(".step-three").delay(600).fadeOut();
     $(".step-four").delay(1100).fadeIn();
     return false
   })
+
+  $(".step-finish").click(function(){
+    $(".step-four").hide();
+    $("#loading").fadeIn();
+    $("#loading").delay(4000).fadeOut();
+    $(".finish").delay(5000).fadeIn();
+  })
+
+  function alertTipList(){
+    if ($('#list').val() === "" || $('#list').val() === "") {
+      $('.tip-list').fadeIn();
+      $('.tip-list').delay(1000).fadeOut(3000);
+      return true
+    }
+    return false
+
+  }
+
+  function alertTipPrice(){
+    if ($('#price').val() === "" || $('#price').val() === "") {
+      $('.tip-price').fadeIn();
+      $('.tip-price').delay(1000).fadeOut(3000)
+      return true
+    }
+    return false
+;
+  }
 
   $("#step-4-3").click(function(){
     $(".step-four").delay(600).fadeOut();
@@ -98,6 +144,13 @@ $(function() {
     $(".profile-icon").toggleClass('alert-profile-inactive')
 
   }
+
+
+  // $("#title").keypress(function (e) {
+  //   if (e.keyCode > 0 || e.keyCode < 249 ) {
+  //     $('#step-1-2').css("opacity","1")
+  //     }
+  // });
 });
 
 // direct_uploads.js
