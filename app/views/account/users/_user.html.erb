@@ -1,7 +1,10 @@
 <div class="chat-user">
   <% @users.each do |user| %>
-    <button type="button" class="btn btn-light">
-      <div><%= link_to user.name,room_path(user) %></div>
+    <button type="button" class="btnz">
+      <%= link_to room_path(user) do  %>
+       <div><%= image_tag user.avatar.variant( resize_to_fit: [45, 45]), class: 'photo' %></div>
+       <%= user.name.capitalize %> <%= user.last_name.capitalize %>
+      <div><%end%></div>
     </button>
   <% end %>
  </div>

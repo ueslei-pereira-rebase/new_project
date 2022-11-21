@@ -107,6 +107,15 @@
       }
     }
   }
+  .col-item-edit{
+    height: 100%;
+    width: 10% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: #796E6E;
+  }
 }
 
 .direct-upload {

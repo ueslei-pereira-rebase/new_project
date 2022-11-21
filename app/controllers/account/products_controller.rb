@@ -19,12 +19,16 @@ module Account
 
     def create
       Advertise::CreateProductService.new(params_permitted, current_user).execute
-      redirect_to account_products_path
+      # redirect_to account_products_path
     end
 
     def edit
-      @advertise_products = Product.find(params[:id])
-      #terminar
+      @product = Product.find(params[:id])
+    end
+
+    def update
+      product = Product.find(params[:id])
+      Advertise::EditProductService.new(params_permitted, product).execute
     end
 
 

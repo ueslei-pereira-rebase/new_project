@@ -19,8 +19,9 @@ class RoomsController < ApplicationController
     @users = Participant.people(@rooms, current_user)
     @room = Room.new
     @message = Message.new
+    
     @messages = @single_room.messages
-
+    
     render "index"
   end
 

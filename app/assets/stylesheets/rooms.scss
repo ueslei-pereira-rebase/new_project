@@ -22,7 +22,7 @@
   padding: 5px;
   border-radius: 10px;
   margin-bottom: 10px;
-  background-color: #555555 ;
+  background-color: #f6f6f6 ;
   padding: 10px
 }
 
@@ -34,7 +34,7 @@
   .box-wrapper-room{
     background: #FFF;
     width: 1000px;
-    height: 644px;
+    height: 613px;
     display: flex;
     justify-content: center;
     border-radius: 10px;
@@ -52,12 +52,13 @@
     .item {
       height: 500px;
       flex: 1;
-      margin: 5px;
-      padding: 0 10px;
+			align-items: flex-start !important;
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
+			border-left: 1px solid black;
+			height: 615px;
       .msg-form{
         width: 500px;
 
@@ -76,28 +77,47 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
-      width: 200px;
+      width: 100%;
+			background-color: #87a3ec;
       a{
         text-decoration: none;
+				color: black;
+				display: block;
+				width: 70%;
+				height: 90px;
+				display: flex;
+				align-items: center;
+				margin-left: 41px;
       }
+			.btnz{
+				border: solid 1px #E0E0E0;
+				height: auto;
+				transition-duration: 0.4s;
+				background-color: #FAFAFA;
+				display: flex;
+				align-items: center;
+			}
+
+			.btnz:hover{
+				box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+				margin-left: 5px;
+			}
     }
 
   }
 
   .room-message{
     width: 500px;
-    height: 500px;
+    height: 478px;
     overflow: overlay;
-    border: 1px solid black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-
+		background-color: white !important;
     .bg-light{
       width: 485px !important;
       height: 500px;
 
       .messages{
         width: 485px;
+				margin: 17px;
       }
     }
   }
@@ -330,4 +350,14 @@ main footer a{
 	margin-left:333px;
 	margin-top:5px;
 	display:inline-block;
+}
+
+.input-chat{
+	position: absolute;
+	bottom: 70px;
+	width: 500px;
+}
+
+.width-chat{
+	width: 480px;
 }

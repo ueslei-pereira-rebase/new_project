@@ -1,0 +1,34 @@
+<div class="step-four">
+
+    <div class="text-step-four">
+      <div class="text-progress">Etapa 4 de 4</div>
+      <div><h2>Falta so mais um pouquinho</h2></div>
+      <div><p> Vamos colocar umas fotos bacanas para seu anuncio?</p></div>
+      <div><p> É importante colocar imagens de qualidade, estamos ansiosos para mostrar seu anuncio para outros usuarios </p></div>
+    </div>
+
+
+    <%# <%= form.file_field :image1 %>
+    <%# <%= form.file_field :image2 %>
+    <div>
+      <%= form.file_field :images, multiple: true %>
+    </div>
+    <div style='border:none; margin-bottom:100px;'>
+    <% if @product.images.attached? %>
+      <% @product.images.each do |image| %>
+        <%= image_tag(image, width: 100)%>
+        <%= link_to "Apagar"%>
+      <% end %>
+    <% end %>
+    </div>
+    <%# <input multiple="multiple" type="file" name="product[images1]" id="product_images1" /> 
+     <input multiple="multiple" type="file" name="product[images2]" id="product_images2" />  %>
+    
+    <div class="btn-step-two">
+      <div class="btn-back"><a href="#" id="step-4-3"><%= image_tag("arrow_back.svg", width: 100) %></a></div>
+      <div class="btn-between-space"></div>
+      <div class="btn-forward"><%= image_submit_tag("check.svg", class: 'step-finish', remote: true) %>
+      </div>
+    </div>
+
+</div>

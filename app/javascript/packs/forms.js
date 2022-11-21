@@ -145,6 +145,21 @@ $(function() {
 
   }
 
+  // var chat = document.getElementById('box-messages');
+  //  chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+
+  $('#enviar-msg').click(function(){
+    setTimeout(
+      function() 
+      {
+        var chat = document.getElementById('box-messages');
+        chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+        $("#myform").trigger("reset");
+      }, 300);
+
+  })
+  
+
 
   // $("#title").keypress(function (e) {
   //   if (e.keyCode > 0 || e.keyCode < 249 ) {
