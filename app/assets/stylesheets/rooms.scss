@@ -361,3 +361,9 @@ main footer a{
 .width-chat{
 	width: 480px;
 }
+
+.chat-empty{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

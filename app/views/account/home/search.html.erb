@@ -6,35 +6,39 @@
   </div>
   <div class="wrapper-history">
     <div class="box-search">
-      <div class="wrapper-keyword">
-        <h3 class="keyword"><%= @keyword.capitalize %></h3>
-        <p class="keyword"><%= @products.total_count %> Resultados</p>
-      </div>
-
-      <% @ads.each do |ad| %>
-        <div class="product-search">
-
-          <div class="block-image-search">
-            <% if ad.image? %>
-              <%= link_to image_tag(ad.showcase), advertise_product_path(ad.product), class: "card-advertise-#{current_user.active?}"  %>
-            <% else %>
-              <%= link_to image_tag('sem-foto.jpg', width: "115px"), advertise_product_path(ad.product), class: "card-advertise-#{current_user.active?}" %>
-            <% end %>
-          </div>
-
-          <div class="block-info-search">
-            <div class="text-info">
-              <h6><%= ad.title %></h3>
-              <p><%= number_to_currency(ad.price)  %></p>
-              <span> <%= ad.owner %> </span>
-            </div>
-          </div>
-
-          <div class="block-interest-search">
-            <%= image_tag('join.svg') %><%= ad.interests %>
-          </div>
-
+    <% if @ads.present? %>
+        <div class="wrapper-keyword">
+          <h3 class="keyword"><%= @keyword.capitalize %></h3>
+          <p class="keyword"><%= @products.total_count %> Resultados</p>
         </div>
+
+        <% @ads.each do |ad| %>
+          <div class="product-search">
+
+            <div class="block-image-search">
+              <% if ad.image? %>
+                <%= link_to image_tag(ad.showcase), advertise_product_path(ad.product), class: "card-advertise-#{current_user.active?}"  %>
+              <% else %>
+                <%= link_to image_tag('sem-foto.jpg', width: "115px"), advertise_product_path(ad.product), class: "card-advertise-#{current_user.active?}" %>
+              <% end %>
+            </div>
+
+            <div class="block-info-search">
+              <div class="text-info">
+                <h6><%= ad.title %></h3>
+                <p><%= number_to_currency(ad.price)  %></p>
+                <span> <%= ad.owner %> </span>
+              </div>
+            </div>
+
+            <div class="block-interest-search">
+              <%= image_tag('join.svg') %><%= ad.interests %>
+            </div>
+
+          </div>
+        <% end %>
+      <% else %>
+        <%= render partial: 'search_not_found' %>
       <% end %>
     </div>
     <%= paginate @products %>

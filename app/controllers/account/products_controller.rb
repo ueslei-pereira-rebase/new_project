@@ -1,7 +1,8 @@
 require 'csv'
 module Account
-  class ProductsController < ApplicationController
+  class ProductsController < AccountController
     before_action :authenticate_user!
+    before_action :user_active!, only: [:new, :create, :edit, :update, :desactive, :active, :wish_list]
 
     def index
       @list_product = Product.where(user_id: current_user)
@@ -67,5 +68,12 @@ module Account
       # params[:product].delete(:authenticity_token)
       # params
     end
+
+    def user_active!
+      if current_user.inactive?
+        redirect_to account_root_path, alert: "Solicitação nao permitida"
+      end
+    end
+
   end
 end

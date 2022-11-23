@@ -9,7 +9,9 @@
   <div class="wrapper">
     <div class="box-auth-room">
       <div class="box-wrapper-room">
+      <% if @users.present? %>
           <div class="container-room stretch">
+          <div></div>
             <div class="chat-list-item item">
               <div class="list-room">
               <div>
@@ -42,8 +44,10 @@
                 </div>
               </div>
             </div>
-            
           </div>
+        <%else%>
+          <%= render partial: 'room_empty' %>
+        <% end %>
       </div>
     </div>
   </div>
