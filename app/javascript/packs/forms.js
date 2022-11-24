@@ -148,6 +148,12 @@ $(function() {
   // var chat = document.getElementById('box-messages');
   //  chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 
+  // $("#CPF").keypress(function (e) {
+  //   $('#CPF').mask('000.000.000-00');
+  //   $('#CNPJ').mask('00.000.000/0000-00');
+  // });
+
+  
   $('#enviar-msg').click(function(){
     setTimeout(
       function() 
