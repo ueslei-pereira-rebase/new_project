@@ -7,13 +7,18 @@ class PrivateChatsController < ApplicationController
     # @rooms = Room.public_rooms
     @rooms = Room.private_rooms 
     @users = Participant.people(@rooms, current_user)
+    
+    if @users.empty?
+      @users = []
+      @users << @user
+    end
     # @users = User.all_except(@current_user)
     @room = Room.new
     @message = Message.new
     @room_name = get_name(@user, @current_user)
     @single_room = Room.where(name: @room_name).first || Room.create_private_room([@user, @current_user], @room_name)
     @messages = @single_room.messages
-  
+
     render "rooms/index"
   end
 

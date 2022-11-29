@@ -6,6 +6,7 @@ services:
     container_name: project
     ports:
       - 3000:3000
+      - 587:587
     volumes:
       - .:/opt/app
     environment: 
