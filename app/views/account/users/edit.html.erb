@@ -22,12 +22,12 @@
               </div>
 
               <div class="input-box">
-                <%= form.telephone_field :phone, required: true, placeholder: true %>
+                <%= form.telephone_field :phone, required: true, placeholder: true, onkeypress:"$(this).mask('(99) 99999-9999')" %>
               </div>
 
 
               <div class="input-box">
-                <%= form.telephone_field :mobile, required: true,  placeholder: true %>
+                <%= form.telephone_field :mobile, required: true,  placeholder: true, onkeypress:"$(this).mask('(99) 9999-9999')"  %>
               </div>
 
               <div class="input-box">

@@ -22,7 +22,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  before_validation :get_company
+  before_validation :get_company, on: [ :create ]
+  before_validation :check_cpf,  on: [ :create ]
   validates_acceptance_of :agree, allow_nil: false, on: :create
   after_create :attach_avatar
 
@@ -33,6 +34,13 @@ class User < ApplicationRecord
 
     def attach_avatar
       self.avatar.attach(io: File.open("app/assets/images/#{self.gender}.jpg"), filename: "profile.jpg")
+    end
+
+    def check_cpf
+      is_valid = CPF.valid?(self.cpf)
+      unless is_valid
+        errors.add(:cpf, "CPF inválido")
+      end 
     end
     
     def get_company

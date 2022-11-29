@@ -1,0 +1,20 @@
+
+
+<%= render "shared/layout" %>
+<div class='content-middle-body'>
+  <div>
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"> <%= image_tag('menu.svg', width: "50px", height: '38px') %> </button>
+    <%= render "shared/sidebar_user" %>
+  </div>
+
+  <div class="wrapper">
+    <div class="box-auth-room">
+      <div class="box-wrapper-room">
+      <div class="chat-empty">
+        <%= image_tag('no_results.svg') %>
+        <h5>Voce não participa de nenhuma lista até o momento</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

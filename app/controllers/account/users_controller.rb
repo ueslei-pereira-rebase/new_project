@@ -1,5 +1,6 @@
 module Account
   class UsersController < AccountController
+    before_action :check_user
 
     def show
       @user = User.find(params[:id])
@@ -31,6 +32,12 @@ module Account
 
     def params_permitted
       params.require(:user).permit(:id, :subsidiary, :department, :phone, :mobile, :avatar)
+    end
+
+    def check_user
+      if current_user.id != params[:id].to_i
+        redirect_to account_root_path, alert: "Acesso negado"
+      end
     end
 
   end

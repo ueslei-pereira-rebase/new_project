@@ -1,5 +1,6 @@
 class PrivateChatsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_user
 
   def show
     @user = User.find(params[:id])
@@ -28,4 +29,9 @@ class PrivateChatsController < ApplicationController
     "private_#{users[0].id}_#{users[1].id}"
   end
 
+  def check_user
+    if current_user.id != params[:id].to_i
+      redirect_to account_root_path, alert: "Acesso negado"
+    end
+  end
 end

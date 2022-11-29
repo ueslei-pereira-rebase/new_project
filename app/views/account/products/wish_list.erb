@@ -7,6 +7,7 @@
   
   <div class="wrapper-history">
     <div class="box-auth-history-advertise">
+      <% return render partial: 'not_found_list' if @advertise_products.empty? %>
       <% @advertise_products.each do |item| %>
         <div class="box-wrapper-history-advertise">
           <div class="col-item-history">

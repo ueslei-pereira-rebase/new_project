@@ -2,6 +2,7 @@ module Advertise
   class ProductsController < ApplicationController
 
     before_action :authenticate_user!
+    before_action :check_user
 
     def show
       adv = Product.find(params[:id])
@@ -20,6 +21,14 @@ module Advertise
       product = Product.find(params[:id])
       Advertise::LeaveListProductService.new(product, current_user).execute
       redirect_to advertise_product_path(product)
+    end
+
+    private
+
+    def check_user
+      if current_user.inactive?
+        redirect_to account_root_path, alert: "Acesso negado"
+      end
     end
   end
 end

@@ -22,7 +22,7 @@
 
       <div class="field-box">
         <div class="input-box">
-          <%= f.text_field :cpf, autofocus: true, autocomplete: "cpf", required: true, placeholder: true, id:"CPF" %>
+          <%= f.text_field :cpf, autofocus: true, autocomplete: "cpf", required: true, placeholder: true, id:"CPF", onkeypress:"$(this).mask('000.000.000-AA')"%>
           <% if resource.errors.messages[:cpf].present? %>
             <span class="field-error"><%= resource.errors.messages[:cpf].first %></span>
           <% end %>

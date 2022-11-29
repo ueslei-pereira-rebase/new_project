@@ -23,7 +23,7 @@ gem 'redis'
 gem 'devise'
 gem "image_processing", ">= 1.2"
 gem 'kaminari'
-gem 'jquery_mask_rails', '~> 0.1.0'
+gem "cpf_cnpj"
 
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
